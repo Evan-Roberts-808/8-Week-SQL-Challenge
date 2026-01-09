@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgis/postgis:15-3.3
+    container_name: sql_challenge
+    environment:
+      POSTGRES_USER: sqluser
+      POSTGRES_PASSWORD: sqlpassword
+      POSTGRES_DB: sql_challenge
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
+    name: sql_challenge
